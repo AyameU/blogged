@@ -1,11 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import ArticleContent from './ArticleContent';
+import { Link } from 'react-router-dom';
 
-const Articles = () => (
+const ArticlesList = ({articles}) => (
     <>
-        <h1>Articles</h1>
-        {ArticleContent.map((article, key) => (
+        {articles.map((article, key) => (
             <Link className="article-item" key={key} to={`/article/${article.name}`}>
                 <h3>{article.title}</h3>
                 <p>{article.content[0].substring(0, 150)}...</p>
@@ -14,4 +12,6 @@ const Articles = () => (
     </>
 );
 
-export default Articles;
+
+
+export default ArticlesList;
